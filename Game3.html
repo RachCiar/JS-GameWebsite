@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Roll Dice</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Chakra+Petch|Great+Vibes|Lobster" rel="stylesheet">
+    </head>
+    <body>
+        <!--This is the header -->
+        <header>
+            <img id="logo" src="images/Logo.jpg" alt="logo">
+            <p id="title">Games for Fun</p>
+            
+        </header>
+        <hr>
+        <!--This is the navigation bar -->
+        <div class="topnav"> 
+            <a class="active" href="index.html">Home</a>
+            <a href="Game1.html">Lotto Number Generator| </a>
+            <a href="Game2.html">Mad Libs| </a>
+            <a href="Game3.html">Roll Dice| </a>
+            <a href="Game4.html">Guess the Number| </a>
+            <a href="Game5.html">Math Quiz| </a>
+            <a href="Game6.html">Hangman| </a>
+            <a id="contact" href="contact.html">Contact</a>
+            <a id="about" href="contact.html">About</a>
+        </div>
+        <br>
+        <!--This is the body of the page -->
+        <div class="gameBox">
+            <h1>Roll the dice</h1>
+            <!--This is image for the first die -->
+            <img src="images/die-1.jpg" id="myDice-1" alt="roll dice">
+            <!--This is image for the second die -->
+            <img src="images/die-2.jpg" id="myDice-2" alt="roll dice">
+            <!--This is the button to roll the dice and get a random image -->
+            <form id="diceForm">
+                <button type="submit" value="Submit" onclick="rollDice(); return false;" class="allButtons">Roll Dice</button>
+            </form>
+
+
+        </div>
+        <script>
+
+            function rollDice() {
+
+                //populate the array with 6 die images
+                var images = ["images/die-1.jpg", "images/die-2.jpg", "images/die-3.jpg", 
+                    "images/die-4.jpg", "images/die-5.jpg", "images/die-6.jpg"];
+
+                //Get the random image for die 1        
+                var rollDie1 = Math.floor(Math.random() * images.length);
+                var randomImage = images[rollDie1];
+                //print the random image
+                document.getElementById("myDice-1").src = randomImage;
+
+                //Get the random image for die 2
+                var rollDie2 = Math.floor(Math.random() * images.length);
+                var randomImage = images[rollDie2];
+                //print the random image
+                document.getElementById("myDice-2").src = randomImage; //Print the array
+            }
+
+
+        </script>
+
+
+
+    </body>
+</html>
